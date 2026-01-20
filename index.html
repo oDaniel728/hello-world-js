@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- tailwindcss -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @layer base {
+            input {
+                @apply bg-slate-200 text-slate-900 px-1 rounded-sm;
+                transition: .2s cubic-bezier(0.19, 1, 0.22, 1) all;
+                &:focus {
+                    @apply bg-slate-100 scale-105 outline-none border-none;
+                }
+            }
+            button {
+                @apply bg-slate-800 px-3 rounded-sm min-w-[100px];
+                transition: .2s cubic-bezier(0.19, 1, 0.22, 1) all;
+                &:hover {
+                    @apply bg-slate-700 scale-105;
+                }
+                &:active {
+                    @apply scale-120;
+                }
+            }
+            .wrong {
+                @apply bg-red-200 text-red-800;
+            }
+            .success {
+                @apply bg-green-200 text-green-800;
+            }
+        }
+    </style>
+
+    <title>Document</title>
+</head>
+<body class="bg-slate-900 text-slate-200 flex justify-center items-center h-screen">
+    <div class="h-[50%]">
+        <div class="grid grid-cols-3 grid-rows-2 gap-2">
+            <p>Digite o seu nome: </p>
+            <input type="text" class="col-span-2" id="nome">
+            <button id="enviar" class="col-start-2">Enviar</button>
+        </div>
+        <div class="text-3xl mx-10 min-w-max flex justify-center items-center bg-slate-200 text-slate-800 font-bold h-[75px] my-7 rounded-sm">
+            <p id="saida" class=""></p>
+        </div>
+    </div>
+    <script src="scripts/index.js"></script>
+</body>
+</html>
