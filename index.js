@@ -2,7 +2,7 @@ const nome = document.getElementById("nome");
 const enviar = document.getElementById("enviar");
 const saida = document.getElementById("saida");
 enviar.addEventListener("click", (e) => {
-    if (!nome.value.match(/^\s*$/gm) && nome.value.match(/^[A-Z][a-z]+$/gm)) {
+    if (!nome.value.match(/^\s*$/gm) && nome.value.match(/^[A-Z][a-z\u00C0-\u017F]+$/gm)) {
         saida.innerHTML = `Olá, ${nome.value}!`;
         nome.value = "Sucesso!";
         nome.disabled = true;
