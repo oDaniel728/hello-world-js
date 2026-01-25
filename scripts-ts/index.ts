@@ -6,7 +6,7 @@ enviar.addEventListener(
     "click", 
     (e) => 
     {
-        if (!nome.value.match(/^\s*$/gm) && nome.value.match(/^[A-Z][a-z]+$/gm))
+        if (!nome.value.match(/^\s*$/gm) && nome.value.match(/^[A-Z][a-z\u00C0-\u017F]+$/gm))
         {
             saida.innerHTML = `Olá, ${nome.value}!`;
             nome.value="Sucesso!";
