@@ -28,9 +28,9 @@ jobs:
       - name: Copy HTML and JS Scripts to deploy Folder
         run: |
           mkdir -p deploy
-          cp index.html deploy
+          cp *.html deploy
           mkdir -p deploy/scripts
-          cp scripts/*.js deploy/scripts/
+          cp dist/*.js deploy/scripts/
 
       - name: Deploy to 'pages' branch
         uses: peaceiris/actions-gh-pages@v4
