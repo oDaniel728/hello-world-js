@@ -30,7 +30,7 @@ jobs:
           mkdir -p deploy
           cp *.html deploy
           mkdir -p deploy/scripts
-          cp dist/*.js deploy/scripts/
+          cp js/*.js deploy/scripts/
 
       - name: Deploy to 'pages' branch
         uses: peaceiris/actions-gh-pages@v4
