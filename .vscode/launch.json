@@ -1,0 +1,37 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "Run script",
+        "runtimeArgs": [
+          "-r",
+          "ts-node/register"
+        ],
+        "args": ["${file}"],
+        "cwd": "${workspaceFolder}",
+        "skipFiles": ["<node_internals>/**"],
+        "console": "internalConsole"
+      },
+      {
+        "name": "Compile scripts",
+        "type": "node",
+        "request": "launch",
+        "runtimeExecutable": "npx",
+        "runtimeArgs": ["tsc"],
+        "cwd": "${workspaceFolder}",
+        "console": "internalConsole"
+      },
+      {
+        "name": "Watch scripts",
+        "type": "node",
+        "request": "launch",
+        "runtimeExecutable": "npx",
+        "runtimeArgs": ["tsc", "--watch"],
+        "cwd": "${workspaceFolder}",
+        "console": "internalConsole"
+      }
+    ]
+  }
+  

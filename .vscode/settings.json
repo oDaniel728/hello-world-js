@@ -1,0 +1,6 @@
+{
+    "tailwindCSS.includeLanguages": {
+        "html": "html"
+    },
+    "css.lint.unknownAtRules": "ignore"
+}
