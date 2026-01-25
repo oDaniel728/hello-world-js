@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "rootDir": "./scripts-ts",
+    "rootDir": "./scripts",
     "outDir": "./scripts",
 
     "target": "ES2020",
@@ -10,5 +10,6 @@
     // "strict": true,
     "skipLibCheck": true
   },
-  "include": ["scripts-ts/**/*.ts"]
+  "include": ["scripts/**/*.ts",],
+  "exclude": []
 }

@@ -3,5 +3,8 @@
         "html": "html"
     },
     "css.lint.unknownAtRules": "ignore",
-    "files.readonlyInclude": {"scripts/*.js": true}
+    "files.readonlyInclude": {"scripts/*.js": true},
+    "files.exclude": {
+        "scripts/*.js": true
+    }
 }
