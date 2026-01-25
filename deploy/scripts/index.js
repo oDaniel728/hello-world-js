@@ -1,7 +1,7 @@
 const nome = document.getElementById("nome");
 const enviar = document.getElementById("enviar");
 const saida = document.getElementById("saida");
-enviar.addEventListener("click", (e) => {
+function click() {
     if (!nome.value.match(/^\s*$/gm) && nome.value.match(/^[A-Z][a-z\u00C0-\u017F]+$/gm)) {
         saida.innerHTML = `Olá, ${nome.value}!`;
         nome.value = "Sucesso!";
@@ -23,4 +23,5 @@ enviar.addEventListener("click", (e) => {
             nome.disabled = false;
         }, 1000);
     }
-});
+}
+enviar.addEventListener("click", (e) => { click(); });

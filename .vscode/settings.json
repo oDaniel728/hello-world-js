@@ -2,5 +2,6 @@
     "tailwindCSS.includeLanguages": {
         "html": "html"
     },
-    "css.lint.unknownAtRules": "ignore"
+    "css.lint.unknownAtRules": "ignore",
+    "files.readonlyInclude": {"scripts/*.js": true}
 }
