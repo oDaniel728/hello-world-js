@@ -27,14 +27,14 @@ jobs:
       
       - name: Copy HTML and JS Scripts to deploy Folder
         run: |
-          mkdir -p deploy
-          cp *.html deploy
-          mkdir -p deploy/scripts
-          cp scripts/*.js deploy/scripts/
+          rm -rf deploy
+          mkdir deploy
+          cp *.html deploy/
+          cp -r scripts deploy/
 
       - name: Deploy to 'pages' branch
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.PAT_TOKEN }}
-          publish_dir: .
+          publish_dir: deploy
           publish_branch: pages
