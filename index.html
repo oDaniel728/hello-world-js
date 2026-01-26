@@ -15,10 +15,10 @@
                 }
             }
             button {
-                @apply bg-slate-800 px-3 rounded-sm min-w-[100px];
+                @apply bg-slate-950 px-3 rounded-sm min-w-[100px];
                 transition: .2s cubic-bezier(0.19, 1, 0.22, 1) all;
                 &:hover {
-                    @apply bg-slate-700 scale-105;
+                    @apply bg-slate-900 scale-105 cursor-pointer;
                 }
                 &:active {
                     @apply scale-120;
@@ -30,22 +30,89 @@
             .success {
                 @apply bg-green-200 text-green-800;
             }
+            .background {
+                @apply bg-radial from-slate-700 to-slate-900;
+            }
+            .alpha_bg {
+                @apply bg-gray-950/30 rounded-2xl shadow-xl;
+            }
         }
     </style>
 
     <title id="title">Hello World</title>
 </head>
-<body class="bg-slate-900 text-slate-200 flex justify-center items-center h-screen">
-    <div class="h-[50%]">
-        <div class="grid grid-cols-3 grid-rows-2 gap-2">
-            <p>Digite o seu nome: </p>
-            <input type="text" class="col-span-2" id="nome">
-            <button id="enviar" class="col-start-2">Enviar</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- tailwindcss -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @layer base {
+            input {
+                @apply bg-slate-200 text-slate-900 px-2 py-1 rounded-sm w-full;
+                transition: background-color .2s ease, box-shadow .2s ease;
+            }
+            input:focus {
+                @apply bg-slate-100 shadow-md;
+            }
+
+            button {
+                @apply bg-slate-950 px-3 py-2 rounded-sm min-w-[100px];
+                transition: background-color .2s ease, box-shadow .2s ease;
+            }
+            button:hover {
+                @apply bg-slate-900 shadow-md;
+            }
+
+            .wrong {
+                @apply bg-red-200 text-red-800;
+            }
+            .success {
+                @apply bg-green-200 text-green-800;
+            }
+            .background {
+                @apply bg-radial from-slate-700 to-slate-900;
+            }
+            .alpha_bg {
+                @apply bg-gray-950/30 rounded-2xl shadow-xl;
+            }
+        }
+    </style>
+
+    <title id="title">Hello World</title>
+</head>
+<body class="text-slate-200 min-h-screen flex justify-center items-center background px-4">
+    <div class="alpha_bg w-full max-w-md md:max-w-xl p-6 md:p-10">
+        
+        <!-- Form -->
+        <div class="flex flex-col md:grid md:grid-cols-3 md:items-center gap-3">
+            <p class="md:col-span-1">Digite o seu nome:</p>
+
+            <input
+                type="text"
+                id="nome"
+                class="md:col-span-2 w-full"
+            >
+
+            <button
+                id="enviar"
+                class="w-full md:col-start-2 md:col-span-2"
+            >
+                Enviar
+            </button>
         </div>
-        <div class="text-3xl mx-10 min-w-max flex justify-center items-center bg-slate-200 text-slate-800 font-bold h-[75px] my-7 rounded-sm">
-            <p id="saida" class=""></p>
+
+        <!-- Saída -->
+        <div class="mt-6 flex justify-center">
+            <div class="w-full text-center bg-slate-200 text-slate-800 font-bold text-xl md:text-2xl py-4 rounded-sm break-words">
+                <p id="saida">...</p>
+            </div>
         </div>
+
     </div>
+
     <script src="scripts/index.js"></script>
 </body>
 </html>
